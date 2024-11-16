@@ -1,18 +1,43 @@
-## This template provides a minimal setup to get Next.js working with MiniKit
+# ZKZK.trade
 
-## Setup
+Trade off-chain assets (domains, blogs, websites, etc) directly between users
 
-```bash
-cp .env.example .env
-pnpm i
-pnpm dev
+
+## Code - frontend
+
+it is in the [frontend subfolder](/frontend).
+
+please use nodejs version 18.
 
 ```
+yarn install
+yarn start
+```
 
-To run as a mini app choose a production app in the dev portal and use NGROK to tunnel. Set the `NEXTAUTH_URL` and the redirect url if using sign in with worldcoin to that ngrok url
+```
+yarn hardhat node
+```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+yarn hardhat compile
+yarn hardhat run scripts/deploy.js
+```
 
-View docs: [Docs](https://minikit-docs.vercel.app/mini-apps)
 
-[Developer Portal](https://developer.worldcoin.org/)
+## Code - vlayer proof
+
+it is in the [vlayer-proof subfolder](/vlayer-proof).
+
+```
+anvil
+```
+
+```
+vlayer serve
+```
+
+```
+forge build
+
+bun run prove:dev
+```
