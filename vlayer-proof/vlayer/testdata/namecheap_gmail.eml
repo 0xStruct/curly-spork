@@ -1,0 +1,118 @@
+Delivered-To: 366488soe@gmail.com
+Received: by 2002:a25:ab8e:0:b0:e38:89f2:2592 with SMTP id v14csp23939ybi;
+        Sat, 16 Nov 2024 06:05:36 -0800 (PST)
+X-Received: by 2002:a05:6402:35c4:b0:5cf:95c4:ff1 with SMTP id 4fb4d7f45d1cf-5cf95c411f8mr3809468a12.24.1731765936097;
+        Sat, 16 Nov 2024 06:05:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1731765936; cv=none;
+        d=google.com; s=arc-20240605;
+        b=gHuAxkDFnrTGKDHbHccWGReGnOU8Wh2qqk1t7QOdpFo3/2R9AMkNycYVvCBaEGJni0
+         kvxnrJSWXU8RVNDJ1IUshxzCuWIFPoDJh5e0tsFXtwLuh2EEVt0aQU141K6th0gNfskM
+         ctJkpsr4rO+WDnw74qaJwkGqlEezCuMP2jJgDBkuWv82FHr/0jBYS9MUFUby4A+Pe+Np
+         eGKVmEAw/HiB+oGxjJ2Qa6sT5QOp0mPFOJr2aDuMAwu+6hC/GnY7h5rEoFgiMXV6S8LM
+         q0wnsJiU2Zp+3rZgy9EjawbrYcbR4/u0aVvM9JLsH2cSM6JQ4ejGN9XXk9Ul386Ho9tL
+         7dKw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=8ESaDRt6Hqp6FqLbUdwbmLxaYNm0UooBMNAbogfxkJs=;
+        fh=WtuYt0+rILQDtillZpbsn26CktWl9AWLuRtsG8UcGAU=;
+        b=F5xR8JcJmJEc+lHB+K03INWHr03QOE1T8vOL8f5W4cU32Akqc/zhoaCB9TCNI1A/zM
+         Z+icxdiM47YvJOIO6zpanCFq4gNmMjD33BS3KIjwbcHNvzqGLMWASBqt17FDRSLS/Z91
+         6JgBIy++8VbER/1mvVXMLRw1caeCteXxlqpfS4p4POzWsV0HfaXtT42QUEv6JgM9AbSz
+         HN43tAbHEbOPStTV3H3NeOSOWY9/2BGzSFavJskP0wrMo2bln1KQdu0VgaClDQ+QvLhG
+         Jc7NFlwNEaF3QWez2sOhQzI7/JQt2PifgRyy697BTaIYTYHcVy5Dp8zMw/9DopikieMK
+         dKIQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=Xieuj1Zr;
+       spf=pass (google.com: domain of 0xstruct@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=0xstruct@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <0xstruct@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-5cfa2c33dd2sor179464a12.2.2024.11.16.06.05.35
+        for <366488soe@gmail.com>
+        (Google Transport Security);
+        Sat, 16 Nov 2024 06:05:36 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0xstruct@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=Xieuj1Zr;
+       spf=pass (google.com: domain of 0xstruct@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=0xstruct@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1731765935; x=1732370735; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=8ESaDRt6Hqp6FqLbUdwbmLxaYNm0UooBMNAbogfxkJs=;
+        b=Xieuj1Zrzdp+51YbR4cuXwMTwib4MHx7e1xwikeKeBbcLGnWVtn/itfD6c1Ac1/P77
+         21ZRpkzvCydAzm8evvYyTE9XzbT7eN+JU1JAZdhVhljXbolzOrMkD7Iv6z9LehUs9p8/
+         06D5dH16mpws62ARbwJBvuHg1bgF8DpJOIbBbBjLIAsC6W1Ij5GO/1ikoYWBKqnuTao1
+         XOEeb1+jp0VhAmPB2q9lr8cjfzUFKPMXWMoybwce13i1Cz/RGI3STXeBE49/WBXEoqgz
+         nfhhebxEq2wQLxI0XjGtt3av2Anfl6VKWLBuVSSOAgMBXlwbFmhKjcUvje8AUeP+cRtu
+         fzfA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1731765935; x=1732370735;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=8ESaDRt6Hqp6FqLbUdwbmLxaYNm0UooBMNAbogfxkJs=;
+        b=hnvTUfioZmLpVTRVsEfKFaJl5VgNDv4hsZSDxTS8Jm3sgGAarxZ7yY9Nc+64Cm0S/s
+         Y3bHOjs7t1cNFrlWZBBy15asdU/XBJOVY6sn7yW/a+t8e8g5a3bm26JcKNeMit2KiyKy
+         kzhk1kUwAGB3X6NquNNBUXQvBXIFde+c8qamq/G4CZ0OoxZumC/0SvkWhXaBiVc27N1a
+         kZqfgy6DdYhyY6Pq0K+g1Cnm87lRjd8+WbbkZUgp29VfM5meaAs8XYyyGc3cxnaTDHeT
+         nZUuGc2gtQy4QWcJcc8K5J7uvpczbw6BxfQ+nHCsfTk/Cb1s7EDVHZJVQM6wQGkhviM6
+         jrng==
+X-Gm-Message-State: AOJu0YzFeSadj8JBYpOuDTyQB4QB930uOiOWAe2je55x/ECDH91ufyhO
+	HWZtzCn2ZvKF+RTZOZSXA8X6BLZG0XUbbBwJktlhRI/zpMiHqF2D342x3eUXRTiO6id1smi2TWj
+	folxA4K6lrfSdCyRE44qJ8XUWpsP9cNo6
+X-Google-Smtp-Source: AGHT+IFD7A8Ncx7CmxZVcZnQ509q8SKIo6AQ6ctQ4WCyL2Jhx93MojGgddmAtSGMK/fgve+tfQEifUaNbJUf1y1k7iU=
+X-Received: by 2002:a05:6402:5213:b0:5ce:cd60:8ecc with SMTP id
+ 4fb4d7f45d1cf-5cf8fd05ac6mr1965034a12.9.1731765934716; Sat, 16 Nov 2024
+ 06:05:34 -0800 (PST)
+MIME-Version: 1.0
+From: 0xStruct Web3 <0xstruct@gmail.com>
+Date: Sat, 16 Nov 2024 21:05:22 +0700
+Message-ID: <CAHSQbUOn81KD-N5bxXm_zp1dtawpxjVwXdN46-RuEjCwDf1-zQ@mail.gmail.com>
+Subject: PUSH DOMAIN CONFIRMATION EMAIL - Namecheap.com
+To: 366488soe@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000005f80520627082d89"
+
+--0000000000005f80520627082d89
+Content-Type: text/plain; charset="UTF-8"
+
+----------------------------------------------------------------------
+Namecheap.com
+Domain Ownership Accepted Notification
+Date: 11/16/2024
+----------------------------------------------------------------------
+
+Dear s,
+
+The request to push the domain has been fulfilled.
+Push to Login ID:  struct88
+These changes apply to the following domain(s):
+seesaw.network
+
+Please contact our support team if you have any questions.
+
+Sincerely,
+Team Namecheap
+http://www.namecheap.com/
+
+----------------------------------------------------------------------
+
+--0000000000005f80520627082d89
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">----------------------------------------------------------=
+------------<br>Namecheap.com<br>Domain Ownership Accepted Notification<br>=
+Date: 11/16/2024<br>-------------------------------------------------------=
+---------------<br><br>Dear s,<br><br>The request to push the domain has be=
+en fulfilled.<br>Push to Login ID:=C2=A0 struct88<br>These changes apply to=
+ the following domain(s):<br>seesaw.network<br><br>Please contact our suppo=
+rt team if you have any questions.<br><br>Sincerely,<br>Team Namecheap<br><=
+a href=3D"http://www.namecheap.com/" rel=3D"noreferrer" target=3D"_blank">h=
+ttp://www.namecheap.com/</a><br><br>---------------------------------------=
+-------------------------------<br></div>
+
+--0000000000005f80520627082d89--

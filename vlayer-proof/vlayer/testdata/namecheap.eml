@@ -1,0 +1,101 @@
+Delivered-To: 0xstruct@gmail.com
+Received: by 2002:a98:8c52:0:b0:214:145a:4da6 with SMTP id f18csp1546863eie;
+        Sat, 16 Nov 2024 00:14:29 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEtZFE1n8T6JDdWtjGMw/nlOM74nAoSot3KAGF3o6MTfRh/Uh2GcexDynrpic4D1278nrBf
+X-Received: by 2002:a05:620a:4104:b0:7a9:bf88:7d9a with SMTP id af79cd13be357-7b362357b76mr322549785a.10.1731744868849;
+        Sat, 16 Nov 2024 00:14:28 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1731744868; cv=none;
+        d=google.com; s=arc-20240605;
+        b=K2meRTMnYAbZRbPY32/2mTal55TOy+8WZ+mykXv8qOc/gNWOmJ2pWJw1vYGz2ffwvE
+         Ka38UUTMjdX46sjNjqCTRqnGVnlkLW+udlrVeln1pRrpp4WIVDX7eyf1yBZcO3lpkdAW
+         WB6ICNqyQxI4rtOT6q3VHDaJPpubq63eLHxBSpKY9lMUzVtb2GWq+VNMJfP5AQbdU+zT
+         jXne/G3T/xELo9tL9lq+tnC8D0in4T0sHt+i9C9rjdwn2dpsK6lJNLmeIm2JXYoNYbKi
+         XiA0F+UKYOWLGFeBFOPMF4hSjpK4GnvnA4/EdroOrZCcwKN8xFmD7D7qIKY5lVGir3ug
+         hwJA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:to:mime-version:message-id:subject:date
+         :from:dkim-signature:dkim-signature;
+        bh=4VhbI2LWKK1cWMwOP7XQHWSSMDlB69wu/dh95QoiwbI=;
+        fh=mKdnb+mddG46eU6u7vFiLRN/j9W1I8cALqpMESwute0=;
+        b=lHjWkturegbTpyUePJknn9vyNCuNl8p5itsMa4Ke8+3RQ1oI5CcfxkzvBNeYQsYX8S
+         k0EfUvixAji3whhyoKZ+9vrnhHTNKALNcwOvYBiExC9i11GduvYnj4se3QldhQLkb776
+         fext9rOqsQZPz8Nc6rZkSB/ah7sbHC0L7gSSt2zccgGbaujI/xoDiyfRHAKmu2ERbqaj
+         wUOWLYgJEX1loSdYLWU2hwXe1dvgsWN8wAdpKwQppDUV+ivXcKNZ0wx60CGdHhUM2xMc
+         rMf31KXS89ju7X4ECsQfJ5KAjy/IV/m7KV9sftl/SVgBV/CdPqkdv6u81SdUDsUcjvsJ
+         wqUA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@namecheap.com header.s=s1 header.b=2C5qTu2l;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="RS9NB/tz";
+       spf=pass (google.com: domain of bounces+18856680-6d23-0xstruct=gmail.com@mailserviceemailout1.namecheap.com designates 168.245.28.209 as permitted sender) smtp.mailfrom="bounces+18856680-6d23-0xstruct=gmail.com@mailserviceemailout1.namecheap.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=namecheap.com
+Return-Path: <bounces+18856680-6d23-0xstruct=gmail.com@mailserviceemailout1.namecheap.com>
+Received: from o7.mailservice.namecheap.com (o7.mailservice.namecheap.com. [168.245.28.209])
+        by mx.google.com with ESMTPS id af79cd13be357-7b35caa21fbsi560299485a.456.2024.11.16.00.14.28
+        for <0xstruct@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 16 Nov 2024 00:14:28 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+18856680-6d23-0xstruct=gmail.com@mailserviceemailout1.namecheap.com designates 168.245.28.209 as permitted sender) client-ip=168.245.28.209;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@namecheap.com header.s=s1 header.b=2C5qTu2l;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="RS9NB/tz";
+       spf=pass (google.com: domain of bounces+18856680-6d23-0xstruct=gmail.com@mailserviceemailout1.namecheap.com designates 168.245.28.209 as permitted sender) smtp.mailfrom="bounces+18856680-6d23-0xstruct=gmail.com@mailserviceemailout1.namecheap.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=namecheap.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=namecheap.com;
+	h=from:subject:mime-version:x-feedback-id:to:content-type:
+	content-transfer-encoding:cc:content-type:from:subject:to;
+	s=s1; bh=4VhbI2LWKK1cWMwOP7XQHWSSMDlB69wu/dh95QoiwbI=;
+	b=2C5qTu2lEpxFx6k/oBYs8ofS0o58JA3BsSAY8/s+G7yV2HityCfXWqQcUX4rNorwioo1
+	fbxjz7txku9pfQ+A8HEKBuH8NItw5ch5hEr741hbrQvKJNB9q9uznyNxwppejX0q0ATiD0
+	Et7fNYb6j3VXfFQNyvuWXvNTuEPTG3AFjK0xYZQEVLzGAxUjdyVfQGA2Tv7OGYx0Qo5Y2+
+	7Q6HvYEGWeRjbYEMO1Qcfzwo1X8JWsuxOBorxvlSzkumA92Ei+Zzzfj2l8g0xwscZIV6zn
+	GIs2OmhlbL8dmFpIMlxZfOc+HIjLqTcbcI3MDWEhs2/gIcQq8/3d6bvuFzpMLvxw==
+Received: by recvd-6789d5b8-652wg with SMTP id recvd-6789d5b8-652wg-1-67385463-A
+	2024-11-16 08:14:27.715621669 +0000 UTC m=+125538.571390577
+Received: from phx01mailauth.corp.namecheap.net (unknown)
+	by geopod-ismtpd-15 (SG) with ESMTP id 3Zgu1SB7Q9WXawe0-XPBzA
+	for <0xstruct@gmail.com>; Sat, 16 Nov 2024 08:14:27.599 +0000 (UTC)
+Received: from domainrights-6586dc4868-n7grq (unknown [10.40.70.191])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by phx01mailauth.corp.namecheap.net (Postfix) with ESMTPSA id 4Xr69v172tz8tgH
+	for <0xstruct@gmail.com>; Sat, 16 Nov 2024 08:14:27 +0000 (UTC)
+From: "NameCheap.com Support" <support@namecheap.com>
+Date: Sat, 16 Nov 2024 08:14:27 +0000 (UTC)
+Subject: PUSH DOMAIN CONFIRMATION EMAIL - Namecheap.com
+Message-Id: <VK6WE5XTMOU4.D959YG3Z7NFN1@domainrights-6586dc4868-n7grq>
+MIME-Version: 1.0
+X-Feedback-ID: 18856680:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EhoEq1cRUoBGuyNco+EPnF6DB=2FeHhVj8SsaN+KX67eax6eRQin=2FXXe2wKT?=
+ =?us-ascii?Q?OUum+mBAqykwTWnDS2uV3MD8aNzSypcH84zKFud?=
+ =?us-ascii?Q?LoENzZ6XAJCLi4lCwyBP3YV5r16ZXCUzXA+zlng?=
+ =?us-ascii?Q?lpt4Y6Hp1smwXnx2hxLLw7MpxXGPSNH7rpoqqqr?=
+ =?us-ascii?Q?KC5D2E4lWRfaHyUG2z+UsMuvWCN8LuP3eqcf5+f?=
+ =?us-ascii?Q?r0PIgYWcIn+DplmJdAgKRWm61vZfhrgjSeUXcki?= =?us-ascii?Q?nxNQ?=
+To: s <0xstruct@gmail.com>
+X-Entity-ID: u001.mXylsRcP1eKM1BCZJY/RTQ==
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+----------------------------------------------------------------------
+Namecheap.com
+Domain Ownership Accepted Notification
+Date: 11/16/2024
+----------------------------------------------------------------------
+
+Dear s,
+
+The request to push the domain has been fulfilled.
+Push to Login ID:  struct88
+These changes apply to the following domain(s):
+seesaw.network
+
+Please contact our support team if you have any questions.
+
+Sincerely,
+Team Namecheap
+http://www.namecheap.com/
+
+----------------------------------------------------------------------

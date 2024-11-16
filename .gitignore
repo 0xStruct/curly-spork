@@ -39,3 +39,7 @@ next-env.d.ts
 
 /frontend/.cache
 /frontend/node_modules
+
+/vlayer-proof/cache
+/vlayer-proof/out
+/vlayer-proof/dependencies
