@@ -24,7 +24,7 @@ yarn hardhat run scripts/deploy.js
 ```
 
 
-## Code - vlayer proof
+## Code - vlayer proof and contracts
 
 it is in the [vlayer-proof subfolder](/vlayer-proof).
 
@@ -40,4 +40,16 @@ vlayer serve
 forge build
 
 bun run prove:dev
+```
+
+### contracts deployment to testnets
+
+Foundry forge script [Deploy.s.sol](/vlayer-proof/script/Deploy.s.sol) is used
+
+```
+cp .env.example .env
+```
+
+```
+forge script script/Counter.s.sol:CounterScript --rpc-url $FLOW_TESTNET_RPC --broadcast -vvvv
 ```
